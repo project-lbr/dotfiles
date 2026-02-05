@@ -1,0 +1,33 @@
+add_newline = false
+
+# HLAVNÍ FORMÁT
+# Všimni si dvojitých lomítek \\( a \\)
+format = """
+[┌──\\(](bold blue)$username[@](bold white)$hostname[\\)-](bold blue)$directory$git_branch
+$character"""
+
+# UŽIVATEL
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style)"
+show_always = true
+
+# HOSTNAME
+[hostname]
+style = "bold white"
+ssh_only = false
+format = "[$hostname]($style)"
+
+# SLOŽKA
+[directory]
+style = "cyan bold"
+read_only = " 🔒"
+truncation_length = 3
+# I tady musíme zdvojit lomítka: \\[ a \\]
+format = "[ \\[ ](bold blue)[$path]($style)[ \\] ](bold blue)"
+
+# DRUHÝ ŘÁDEK
+[character]
+success_symbol = "[└─❯](bold green)"
+error_symbol = "[└─❯](bold red)"
