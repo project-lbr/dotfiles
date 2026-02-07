@@ -4,7 +4,7 @@
 > Managed with **GNU Stow**.
 
 ## Preview
-<h1 align="center">Můj Arch Linux Setup 🍙</h1>
+<h1 align="center">My EndeavourOS Linux Setup</h1>
 
 <p align="center">
   <img src="assets/preview.png" alt="Fastfetch showcase" width="85%" />
