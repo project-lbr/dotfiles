@@ -185,16 +185,16 @@ dirs = [
 	{ name = ".git", text = "", fg = "#94e2d5" },
 	{ name = ".github", text = "", fg = "#89b4fa" },
 	{ name = ".npm", text = "", fg = "#89b4fa" },
-	{ name = "Desktop", text = "", fg = "#94e2d5" },
+	{ name = "Plocha", text = "", fg = "#94e2d5" },
 	{ name = "Development", text = "", fg = "#94e2d5" },
-	{ name = "Documents", text = "", fg = "#94e2d5" },
+	{ name = "Dokumenty", text = "", fg = "#94e2d5" },
 	{ name = "Downloads", text = "", fg = "#94e2d5" },
 	{ name = "Library", text = "", fg = "#94e2d5" },
 	{ name = "Movies", text = "", fg = "#94e2d5" },
-	{ name = "Music", text = "", fg = "#94e2d5" },
-	{ name = "Pictures", text = "", fg = "#94e2d5" },
-	{ name = "Public", text = "", fg = "#94e2d5" },
-	{ name = "Videos", text = "", fg = "#94e2d5" },
+	{ name = "Hudba", text = "", fg = "#94e2d5" },
+	{ name = "Obrázky", text = "", fg = "#94e2d5" },
+	{ name = "Veřejné", text = "", fg = "#94e2d5" },
+	{ name = "Videa", text = "", fg = "#94e2d5" },
 ]
 conds = [
 	# Special files
