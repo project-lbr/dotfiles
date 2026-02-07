@@ -1,19 +1,23 @@
-# 🔧 Dotfiles
+#  Dotfiles
 
 > My personal configuration files for Arch Linux (EndeavourOS). 
 > Managed with **GNU Stow**.
 
-## 🖼️ Preview
-![Show of my Preset](assets/preview.png)
+## Preview
+<h1 align="center">Můj Arch Linux Setup 🍙</h1>
 
-## 🛠️ Tech Stack
+<p align="center">
+  <img src="assets/preview.png" alt="Fastfetch showcase" width="85%" />
+</p>
+
+## Tech Stack
 * **OS:** Arch Linux (EndeavourOS)
 * **Shell:** Zsh
 * **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 * **Prompt:** [Starship](https://starship.rs/)
 * **Font:** JetBrains Mono Nerd Font
 
-## 🚀 Installation
+## Installation
 
 ### 1. Dependencies
 First, install the necessary packages:
