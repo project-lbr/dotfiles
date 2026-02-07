@@ -17,12 +17,14 @@
 * **Prompt:** [Starship](https://starship.rs/)
 * **Font:** JetBrains Mono Nerd Font
 
-## Installation
+
 
 ## Install.sh Installation
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/install.sh)"
 ```
+
+## Installation
 ### 1. Dependencies
 First, install the necessary packages:
 ```bash
