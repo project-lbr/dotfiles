@@ -20,7 +20,7 @@
 
 
 ## Install.sh Installation
-* **Warning this works only on Arch-Based Distributions! **
+* <h1>Warning this works only on Arch-Based Distributions!</h1> 
 <p>Copy this script in your terminal and it will install "all" of must have apps (for me).</p>
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/install.sh)"
