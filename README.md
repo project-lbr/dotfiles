@@ -4,7 +4,7 @@
 > Managed with **GNU Stow**.
 
 ## 🖼️ Preview
-*(Add a cool screenshot of your terminal here)*
+![Show of my Preset](assets/preview.png)
 
 ## 🛠️ Tech Stack
 * **OS:** Arch Linux (EndeavourOS)
