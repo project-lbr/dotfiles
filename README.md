@@ -20,10 +20,11 @@
 ## Installation
 
 ## Install.sh Installation
-``` bash
+```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/install.sh)"
-
+```
 ### 1. Dependencies
 First, install the necessary packages:
 ```bash
 sudo pacman -S kitty starship zsh stow git ttf-jetbrains-mono-nerd
+```
