@@ -12,21 +12,23 @@
 
 ## Tech Stack
 * **OS:** [EndeavourOS](https://endeavouros.com/)
-* **Shell:** Zsh
+* **Shell:** Zsh + [Oh My Zsh](https://ohmyz.sh/)
 * **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 * **Prompt:** [Starship](https://starship.rs/)
 * **Font:** JetBrains Mono Nerd Font
 
+<br>
+<br>
 
-## Install.sh Installation
-* <h2>Warning this works only on Arch-Based Distributions!</h2> 
+# Install.sh Installation
+<h2>Warning this works only on Arch-Based Distributions!</h2> 
 <p>Copy this script in your terminal and it will install "all" of must have apps (for me).</p>
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/install.sh)"
 ```
 
-## Installation
+# Installation
 ### 1. Dependencies
 First, install the necessary packages:
 
