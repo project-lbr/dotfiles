@@ -12,7 +12,7 @@
 
 ## Tech Stack
 * **OS:** [EndeavourOS](https://endeavouros.com/)
-* **Shell:** Zsh + [Oh My Zsh](https://ohmyz.sh/)
+* **Shell:** Zsh
 * **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 * **Prompt:** [Starship](https://starship.rs/)
 * **Font:** JetBrains Mono Nerd Font
