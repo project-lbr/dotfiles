@@ -15,7 +15,7 @@
 * **Shell:** Zsh
 * **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 * **Prompt:** [Starship](https://starship.rs/)
-* **Font:** JetBrains Mono Nerd Font
+* **Font:** [JetBrains Mono Nerd Font](https://www.jetbrains.com/lp/mono/)
 
 <br>
 <br>
