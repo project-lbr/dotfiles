@@ -16,7 +16,7 @@ alias cl='clear'
 alias ff='fastfetch'
 alias dot='cd dotfiles/'
 alias lg='lazygit'
-
+alias rvk="cd /home/libor/RVK/Pedagogick-portfolium-Bc-Mgr-"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
