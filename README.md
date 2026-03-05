@@ -7,7 +7,7 @@
 <h1 align="center">My EndeavourOS Linux Setup</h1>
 
 <p align="center">
-  <img src="assets/preview.png" alt="Fastfetch showcase" width="90%" />
+  <img src="assets/preview-catppuccin.png" alt="Fastfetch showcase" width="90%" />
 </p>
 
 ## Tech Stack
