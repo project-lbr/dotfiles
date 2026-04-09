@@ -1,0 +1,51 @@
+GNU nano 8.7.1                                                                                  /home/Prohudy10/.config/fastfetch/config.jsonc                                                                                            
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "arch",
+    "color": { "1": "cyan", "2": "blue" },
+    "padding": { "top": 2, "left": 1, "right": 3 }
+  },
+  "display": {
+    "separator": " ➜  ",
+    "color": "magenta",
+    "key": { "width": 20 }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": " {#34}╭───────────━━━━━ {#36}󰣇 {#} {user-name-colored}{#34} ━━━━━───────────╮"
+    },
+    { "type": "custom", "format": " {#34}│ {#36}󰍹 {#} SYSTEM INFORMATION" },
+    { "type": "os", "key": " {#34}│  {#36}├─ {#}OS", "keyColor": "blue" },
+    { "type": "kernel", "key": " {#34}│  {#36}├─ {#}Kernel", "keyColor": "blue" },
+    { "type": "uptime", "key": " {#34}│  {#36}├─ {#}Uptime", "keyColor": "blue" },
+    { "type": "packages", "key": " {#34}│  {#36}└─ {#}Packages", "keyColor": "blue" },
+    { "type": "custom", "format": " {#34}│" },
+    { "type": "custom", "format": " {#34}│ {#36} {#} ENVIRONMENT" },
+    { "type": "de", "key": " {#34}│  {#36}├─ {#}Desktop", "keyColor": "cyan" },
+    { "type": "wm", "key": " {#34}│  {#36}├─ {#}Manager", "keyColor": "cyan" },
+    { "type": "shell", "key": " {#34}│  {#36}├─ {#}Shell", "keyColor": "cyan" },
+    { "type": "terminal", "key": " {#34}│  {#36}└─ {#}Terminal", "keyColor": "cyan" },
+    { "type": "custom", "format": " {#34}│" },
+    { "type": "custom", "format": " {#34}│ {#36} {#} HARDWARE" },
+    { "type": "cpu", "key": " {#34}│  {#36}├─ {#}Processor", "keyColor": "green" },
+    { "type": "gpu", "key": " {#34}│  {#36}├─ {#}Graphics", "keyColor": "green" },
+    { "type": "memory", "key": " {#34}│  {#36}├─ {#}Memory", "keyColor": "green" },
+    { "type": "disk", "key": " {#34}│  {#36}└─ {#}Storage (/)", "keyColor": "green" },
+    { "type": "custom", "format": " {#34}│" },
+    // KULATÁ BARVIČKY (Fix)
+    {
+      "type": "colors",
+      "key": " {#34}│  ",
+      "symbol": "circle",
+      "block": {
+        "range": [1, 6]
+      }
+    },
+    { 
+      "type": "custom",
+      "format": " {#34}╰──────────────────────────────────────────────────╯"
+    }
+  ]
+}
