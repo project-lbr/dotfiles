@@ -20,6 +20,8 @@
 <br>
 <br>
 
+https://github.com/dhruv8sh/kara
+https://github.com/dhruv8sh/plasma6-window-title-applet
 # Install.sh Installation
 <h2>Warning this works only on Arch-Based Distributions!</h2> 
 <p>Copy this script in your terminal and it will install "all" of must have apps (for me).</p>
