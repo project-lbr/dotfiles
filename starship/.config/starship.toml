@@ -11,6 +11,7 @@ $character"""
 style_user = "green bold"
 style_root = "red bold"
 # For dynamic name use [user] instead of static name
+# $user for dynamic name
 format = "[project-lbr]($style)"
 show_always = true
 
