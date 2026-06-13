@@ -34,20 +34,20 @@ fi
 PKGS=(
   # Internet a Komunikace
   "zen-browser-bin" "firefox" "discord" "thunderbird" "tailscale"
-  "localsend-bin" "filezilla" "bitwarden"
+  "localsend-bin" "filezilla" "bitwarden" "obsidian" "librewolf-bin" 
 
   # Média a Kancelář
-  "vlc" "spotify" "libreoffice-fresh" "okular"
+  "vlc" "spotify" "onlyoffice-bin" "okular"
 
   # Editory a Vývoj
-  "code" "neovim" "micro" "git" "lazygit"
+  "code" "neovim" "micro" "git" "lazygit" "antigravity"
 
   # Terminál a Shell
   "kitty" "zsh" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
   "zoxide" "tldr" "curl" "fd"
 
   # Systémové nástroje
-  "timeshift" "flameshot" "stow"
+  "timeshift" "flameshot" "stow" "syncthing"
 )
 
 # --- 4. Aktualizace a Instalace ---
