@@ -33,11 +33,11 @@ fi
 # --- 3. SEZNAM BALÍČKŮ (Tuxmate) ---
 PKGS=(
   # Internet a Komunikace
-  "zen-browser-bin" "firefox" "discord" "thunderbird" "tailscale"
-  "localsend-bin" "filezilla" "bitwarden" "obsidian" "librewolf-bin" 
+  "zen-browser-bin" "discord" "thunderbird" "tailscale"
+  "localsend-bin" "filezilla" "bitwarden" "obsidian" "librewolf-bin"
 
   # Média a Kancelář
-  "vlc" "spotify" "onlyoffice-bin" "okular"
+  "vlc" "spotify" "onlyoffice-bin" "okular" "obs-studio" "droidcam" "freecad"
 
   # Editory a Vývoj
   "code" "neovim" "micro" "git" "lazygit" "antigravity"
