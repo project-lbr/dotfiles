@@ -51,15 +51,38 @@ PKGS=(
 )
 
 # --- 4. Aktualizace a Instalace ---
-echo -e "${BLUE}Aktualizuji systém a instaluji programy...${NC}"
+echo -e "${BLUE}Aktualizuji systém...${NC}"
 sudo pacman -Syu --noconfirm
 
-if command -v yay &>/dev/null; then
-  yay -S --needed --noconfirm "${PKGS[@]}"
-else
-  echo -e "${RED}Chyba: Nemáš nainstalovaný 'yay'.${NC}"
-  echo "Na čistém Archu ho musíš nejdřív nainstalovat ručně."
-  exit 1
+# Automatická instalace yay, pokud chybí
+if ! command -v yay &>/dev/null; then
+  echo -e "${BLUE}'yay' nebyl nalezen. Instaluji 'yay-bin' z AUR...${NC}"
+  sudo pacman -S --needed --noconfirm base-devel git
+  git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+  cd /tmp/yay-bin
+  makepkg -si --noconfirm
+  cd - &>/dev/null
+  rm -rf /tmp/yay-bin
+fi
+
+echo -e "${BLUE}Instaluji balíčky pomocí yay...${NC}"
+yay -S --needed --noconfirm "${PKGS[@]}"
+
+# --- 4.5 Oh My Zsh a pluginy ---
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo -e "${BLUE}Instaluji Oh My Zsh...${NC}"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+  echo -e "${BLUE}Instaluji plugin zsh-syntax-highlighting...${NC}"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+fi
+
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+  echo -e "${BLUE}Instaluji plugin zsh-autosuggestions...${NC}"
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 fi
 
 # --- 5. Aplikace Configů (Stow) ---
@@ -73,13 +96,41 @@ STOW_DIRS=(
   "lazygit"
   "yazi"
   "kitty"
-  # "neovim"
-  # "zsh"
+  "btop"
+  "starship"
+  "zshrc"
 )
+
+# Funkce pro zálohování kolizních souborů/složek před spuštěním stow
+backup_conflicts() {
+  local dir="$1"
+  # Hledáme soubory/složky přímo v kořenu stow složky (např. .zshrc)
+  find "$dir" -maxdepth 1 -mindepth 1 2>/dev/null | while read -r item; do
+    local rel="${item#$dir/}"
+    if [ "$rel" = ".config" ]; then
+      # Pro .config jdeme o úroveň hlouběji (např. .config/kitty, .config/starship.toml)
+      find "$item" -maxdepth 1 -mindepth 1 2>/dev/null | while read -r subitem; do
+        local subrel="${subitem#$dir/}"
+        local target="$HOME/$subrel"
+        if [ -e "$target" ] && [ ! -L "$target" ]; then
+          echo -e "${BLUE}Zálohuji existující soubor/složku: $target -> $target.bak${NC}"
+          mv "$target" "$target.bak"
+        fi
+      done
+    else
+      local target="$HOME/$rel"
+      if [ -e "$target" ] && [ ! -L "$target" ]; then
+        echo -e "${BLUE}Zálohuji existující soubor/složku: $target -> $target.bak${NC}"
+        mv "$target" "$target.bak"
+      fi
+    fi
+  done
+}
 
 for dir in "${STOW_DIRS[@]}"; do
   if [ -d "$dir" ]; then
-    echo -e "${GREEN}Stowuji: $dir${NC}"
+    echo -e "${GREEN}Zálohuji konflikty a stowuji: $dir${NC}"
+    backup_conflicts "$dir"
     # --restow zajistí opravu odkazů, pokud už existují
     stow --restow "$dir"
   else
