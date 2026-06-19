@@ -17,6 +17,15 @@ if [ "$EUID" -eq 0 ]; then
   exit 1
 fi
 
+# Detekce a blokování CachyOS
+if [ -f /etc/os-release ]; then
+  . /etc/os-release
+  if [ "$ID" = "cachyos" ] || grep -qi "cachyos" /etc/os-release; then
+    echo -e "${RED}This script is not working CachyOS distribution. Please copy manually dotfiles or try to look for another dotfiles repository that is made for CachyOS, Thanks.${NC}"
+    exit 1
+  fi
+fi
+
 echo -e "${BLUE}Začínám instalaci tvého systému...${NC}"
 
 # --- 2. Příprava (Git a Dotfiles) ---
