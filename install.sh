@@ -21,7 +21,7 @@ fi
 if [ -f /etc/os-release ]; then
   . /etc/os-release
   if [ "$ID" = "cachyos" ] || grep -qi "cachyos" /etc/os-release; then
-    echo -e "${RED}This script is not working CachyOS distribution. Please copy manually dotfiles or try to look for another dotfiles repository that is made for CachyOS, Thanks.${NC}"
+    echo -e "${RED}This script is not working on CachyOS distribution. Please copy manually dotfiles or try to look for another dotfiles repository that is made for CachyOS, Thanks.${NC}"
     exit 1
   fi
 fi
