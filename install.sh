@@ -10,6 +10,13 @@ BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+# Ochrana před spuštěním pod rootem/sudo
+if [ "$EUID" -eq 0 ]; then
+  echo -e "${RED}Chyba: Nespouštěj tento skript pod sudo nebo jako root!${NC}"
+  echo "Skript si o práva root (sudo) požádá sám, až je bude potřebovat."
+  exit 1
+fi
+
 echo -e "${BLUE}Začínám instalaci tvého systému...${NC}"
 
 # --- 2. Příprava (Git a Dotfiles) ---
@@ -21,13 +28,21 @@ if ! command -v git &>/dev/null; then
   sudo pacman -S --noconfirm git
 fi
 
-# Pokud složka neexistuje, naklonujeme ji
-if [ ! -d "$HOME/$REPO_NAME" ]; then
-  echo -e "${GREEN}Klonuji repozitář z GitHubu ($GITHUB_USER)...${NC}"
-  git clone "https://github.com/$GITHUB_USER/$REPO_NAME.git" "$HOME/$REPO_NAME"
+# Zjištění, zda už nejsme ve složce dotfiles
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -d "$SCRIPT_DIR/kitty" ] && [ -d "$SCRIPT_DIR/zshrc" ]; then
+  DOTFILES_DIR="$SCRIPT_DIR"
+  echo -e "${GREEN}Spouštím přímo z klonované složky: $DOTFILES_DIR${NC}"
 else
-  echo -e "${GREEN}Složka dotfiles již existuje. Aktualizuji...${NC}"
-  cd "$HOME/$REPO_NAME" && git pull
+  DOTFILES_DIR="$HOME/$REPO_NAME"
+  # Pokud složka neexistuje, naklonujeme ji
+  if [ ! -d "$DOTFILES_DIR" ]; then
+    echo -e "${GREEN}Klonuji repozitář z GitHubu ($GITHUB_USER)...${NC}"
+    git clone "https://github.com/$GITHUB_USER/$REPO_NAME.git" "$DOTFILES_DIR"
+  else
+    echo -e "${GREEN}Složka dotfiles již existuje. Aktualizuji...${NC}"
+    cd "$DOTFILES_DIR" && git pull
+  fi
 fi
 
 # --- 3. SEZNAM BALÍČKŮ (Tuxmate) ---
@@ -88,7 +103,10 @@ fi
 # --- 5. Aplikace Configů (Stow) ---
 echo -e "${BLUE}Propojuji dotfiles pomocí Stow...${NC}"
 
-cd "$HOME/$REPO_NAME"
+# Ujistíme se, že složka ~/.config existuje
+mkdir -p "$HOME/.config"
+
+cd "$DOTFILES_DIR"
 
 # Seznam složek k propojení
 STOW_DIRS=(
@@ -142,7 +160,7 @@ done
 CURRENT_SHELL=$(basename "$SHELL")
 if [ "$CURRENT_SHELL" != "zsh" ]; then
   echo -e "${BLUE}Měním výchozí shell na Zsh...${NC}"
-  chsh -s /usr/bin/zsh
+  sudo chsh -s /usr/bin/zsh "$USER"
 fi
 
 echo -e "${GREEN}HOTOVO! Restartuj terminál (nebo PC).${NC}"
