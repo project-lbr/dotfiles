@@ -64,7 +64,7 @@ PKGS=(
   "vlc" "spotify" "onlyoffice-bin" "okular" "obs-studio" "droidcam" "freecad"
 
   # Editory a Vývoj
-  "code" "neovim" "micro" "git" "lazygit" "antigravity"
+  "visual-studio-code-bin" "neovim" "micro" "git" "lazygit" "antigravity"
 
   # Terminál a Shell
   "kitty" "zsh" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
