@@ -1,0 +1,125 @@
+# --- PÍSMO (Nutné pro ikony) ---
+font_family      JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size        15.0
+
+# --- VZHLED ---
+term xterm-256color
+background_opacity 1
+# Skryje horní lištu okna (ušetří místo na malém displeji X390)
+hide_window_decorations yes 
+window_padding_width 15
+
+# --- TILING (Dlaždice) ---
+# Layouty: Tall (hlavní vlevo, zbytek vpravo), Grid (mřížka), Fat (hlavní nahoře)
+enabled_layouts tall,grid,fat
+
+# --- ZKRATKY (Ovládání bez myši) ---
+# Ctrl+Shift+Enter = Nové okno (automaticky se zařadí)
+# Ctrl+Shift+W     = Zavřít okno
+# Ctrl+Shift+L     = Změnit rozložení (Tall -> Grid -> ...)
+map ctrl+shift+left  neighboring_window left
+map ctrl+shift+right neighboring_window right
+map ctrl+shift+up    neighboring_window up
+map ctrl+shift+down  neighboring_window down
+
+# --- ROZŠÍŘENÍ ---
+# Povolení dálkového ovládání (pro nahrávání obrázků přes icat atd.)
+allow_remote_control yes
+
+# --- ZÁLOŽKY (TABS) ---
+# Ctrl + Tab = Další záložka (jako v prohlížeči)
+map ctrl+tab        next_tab
+map ctrl+shift+tab  previous_tab
+
+# --- ZMĚNA VELIKOSTI OKEN (RESIZE) ---
+# Alt + Šipka změní velikost aktivního okna
+map alt+left  resize_window narrower
+map alt+right resize_window wider
+map alt+up    resize_window taller
+map alt+down  resize_window shorter
+
+# --- PŘEJMENOVÁNÍ ZÁLOŽKY ---
+# Po stisku této zkratky se podívej DOLŮ nebo NAHORU do okna.
+# Uvidíš tam text "Set tab title:". Napiš název a dej Enter.
+map ctrl+shift+e set_tab_title
+map ctrl+shift+t combine : new_tab : set_tab_title
+
+
+
+# The basic colors
+foreground              #cdd6f4
+background              #1e1e2e
+selection_foreground    #1e1e2e
+selection_background    #f5e0dc
+
+# Cursor colors
+cursor                  #f5e0dc
+cursor_text_color       #1e1e2e
+
+# Scrollbar colors
+scrollbar_handle_color  #9399b2
+scrollbar_track_color   #45475a
+
+# URL color when hovering with mouse
+url_color               #f5e0dc
+
+# Kitty window border colors
+active_border_color     #b4befe
+inactive_border_color   #6c7086
+bell_border_color       #f9e2af
+
+# OS Window titlebar colors
+wayland_titlebar_color system
+macos_titlebar_color system
+
+# Tab bar colors
+active_tab_foreground   #11111b
+active_tab_background   #cba6f7
+inactive_tab_foreground #cdd6f4
+inactive_tab_background #181825
+tab_bar_background      #11111b
+
+# Colors for marks (marked text in the terminal)
+mark1_foreground #1e1e2e
+mark1_background #b4befe
+mark2_foreground #1e1e2e
+mark2_background #cba6f7
+mark3_foreground #1e1e2e
+mark3_background #74c7ec
+
+# The 16 terminal colors
+
+# black
+color0 #45475a
+color8 #585b70
+
+# red
+color1 #f38ba8
+color9 #f38ba8
+
+# green
+color2  #a6e3a1
+color10 #a6e3a1
+
+# yellow
+color3  #f9e2af
+color11 #f9e2af
+
+# blue
+color4  #89b4fa
+color12 #89b4fa
+
+# magenta
+color5  #f5c2e7
+color13 #f5c2e7
+
+# cyan
+color6  #94e2d5
+color14 #94e2d5
+
+# white
+color7  #bac2de
+color15 #a6adc8
