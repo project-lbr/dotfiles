@@ -50,11 +50,9 @@ cd ~/dotfiles
 ```
 
 ### 3. Deploy Configs with Stow
-Use GNU Stow to symlink the configurations you want. For example:
+Use GNU Stow to symlink the configurations:
 ```bash
-stow kitty
-stow starship
-stow zshrc
+stow btop fastfetch kitty lazygit starship yazi zshrc
 ```
 
 ---
