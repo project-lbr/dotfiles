@@ -61,13 +61,13 @@ stow btop fastfetch kitty lazygit starship yazi zshrc
 
 This repository contains configurations for:
 
-* **[Kitty](file:///home/libor/dotfiles/kitty)** - Fast, GPU-accelerated terminal emulator.
-* **[Starship](file:///home/libor/dotfiles/starship)** - Blazing-fast, minimal, and customizable prompt.
-* **[Zsh](file:///home/libor/dotfiles/zshrc)** - Configured with Oh My Zsh, autocomplete, and syntax highlighting.
-* **[Fastfetch](file:///home/libor/dotfiles/fastfetch)** - Elegant, fast system information display.
-* **[Yazi](file:///home/libor/dotfiles/yazi)** - Terminal file manager.
-* **[Btop](file:///home/libor/dotfiles/btop)** - Interactive system resources monitor.
-* **[Lazygit](file:///home/libor/dotfiles/lazygit)** - Simple terminal UI for git.
+* **[Kitty](https://sw.kovidgoyal.net/kitty/)** - Fast, GPU-accelerated terminal emulator.
+* **[Starship](https://starship.rs/)** - Blazing-fast, minimal, and customizable prompt.
+* **[Zsh](https://www.zsh.org/)** (with **[Oh My Zsh](https://ohmyz.sh/)**) - Configured with autocomplete and syntax highlighting.
+* **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)** - Elegant, fast system information display.
+* **[Yazi](https://yazi-rs.github.io/)** - Blazing fast terminal file manager written in Rust.
+* **[Btop](https://github.com/aristocratos/btop)** - Interactive system resources monitor.
+* **[Lazygit](https://github.com/jesseduffield/lazygit)** - Simple terminal UI for git commands.
 
 ---
 
