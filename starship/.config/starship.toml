@@ -1,12 +1,12 @@
 add_newline = false
 
-# HLAVNÍ FORMÁT
-# Všimni si dvojitých lomítek \\( a \\)
+# MAIN FORMAT
+# Note the double backslashes \\( and \\)
 format = """
 [┌──\\(](bold blue)$username[@](bold white)$hostname[\\)-](bold blue)$directory$git_branch
 $character"""
 
-# UŽIVATEL
+# USERNAME
 [username]
 style_user = "green bold"
 style_root = "red bold"
@@ -21,15 +21,15 @@ style = "bold white"
 ssh_only = false
 format = "[$hostname]($style)"
 
-# SLOŽKA
+# DIRECTORY
 [directory]
 style = "cyan bold"
 read_only = " 🔒"
 truncation_length = 3
-# I tady musíme zdvojit lomítka: \\[ a \\]
+# Here too we must double the backslashes: \\[ and \\]
 format = "[ \\[ ](bold blue)[$path]($style)[ \\] ](bold blue)"
 
-# DRUHÝ ŘÁDEK
+# SECOND LINE
 [character]
 success_symbol = "[└─❯](bold green)"
 error_symbol = "[└─❯](bold red)"

@@ -1,34 +1,34 @@
 #!/bin/bash
 
-# --- 1. NASTAVENÍ ---
+# --- 1. SETTINGS ---
 GITHUB_USER="project-lbr"
 REPO_NAME="dotfiles"
 
-# --- Barvičky ---
+# --- Colors ---
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-# Ochrana před spuštěním pod rootem/sudo
+# Protection against running as root/sudo
 if [ "$EUID" -eq 0 ]; then
-  echo -e "${RED}Chyba: Nespouštěj tento skript pod sudo nebo jako root!${NC}"
-  echo "Skript si o práva root (sudo) požádá sám, až je bude potřebovat."
+  echo -e "${RED}Error: Do not run this script as sudo or root!${NC}"
+  echo "The script will ask for root (sudo) privileges itself when it needs them."
   exit 1
 fi
 
-echo -e "${BLUE}Nastavuji dotfiles a Stow...${NC}"
+echo -e "${BLUE}Setting up dotfiles and Stow...${NC}"
 
-# --- 2. Příprava (Git a Dotfiles) ---
-echo -e "${BLUE}Kontroluji existenci dotfiles...${NC}"
+# --- 2. Preparation (Git and Dotfiles) ---
+echo -e "${BLUE}Checking if dotfiles exist...${NC}"
 
-# Pokud nemáme git, nainstalujeme ho
+# If git is not installed, install it
 if ! command -v git &>/dev/null; then
-  echo "Git nenalezen. Instaluji..."
+  echo "Git not found. Installing..."
   sudo pacman -S --noconfirm git
 fi
 
-# Zjištění, zda už nejsme ve složce dotfiles
+# Check if we are already in the dotfiles folder
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ "$(basename "$SCRIPT_DIR")" = "installs" ]; then
   PARENT_DIR="$(dirname "$SCRIPT_DIR")"
@@ -38,51 +38,51 @@ fi
 
 if [ -d "$PARENT_DIR/kitty" ] && [ -d "$PARENT_DIR/zshrc" ]; then
   DOTFILES_DIR="$PARENT_DIR"
-  echo -e "${GREEN}Spouštím přímo z klonované složky: $DOTFILES_DIR${NC}"
+  echo -e "${GREEN}Running directly from the cloned folder: $DOTFILES_DIR${NC}"
 else
   DOTFILES_DIR="$HOME/$REPO_NAME"
-  # Pokud složka neexistuje, naklonujeme ji
+  # If the folder does not exist, clone it
   if [ ! -d "$DOTFILES_DIR" ]; then
-    echo -e "${GREEN}Klonuji repozitář z GitHubu ($GITHUB_USER)...${NC}"
+    echo -e "${GREEN}Cloning repository from GitHub ($GITHUB_USER)...${NC}"
     git clone "https://github.com/$GITHUB_USER/$REPO_NAME.git" "$DOTFILES_DIR"
   else
-    echo -e "${GREEN}Složka dotfiles již existuje. Aktualizuji...${NC}"
+    echo -e "${GREEN}Dotfiles folder already exists. Updating...${NC}"
     cd "$DOTFILES_DIR" && git pull
   fi
 fi
 
-# Pokud nemáme stow, nainstalujeme ho (potřebujeme ho pro prolinkování)
+# If stow is not installed, install it (needed for symlinking)
 if ! command -v stow &>/dev/null; then
-  echo "Stow nenalezen. Instaluji..."
+  echo "Stow not found. Installing..."
   sudo pacman -S --noconfirm stow
 fi
 
-# --- 3. Oh My Zsh a pluginy ---
+# --- 3. Oh My Zsh and plugins ---
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo -e "${BLUE}Instaluji Oh My Zsh...${NC}"
+  echo -e "${BLUE}Installing Oh My Zsh...${NC}"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-  echo -e "${BLUE}Instaluji plugin zsh-syntax-highlighting...${NC}"
+  echo -e "${BLUE}Installing zsh-syntax-highlighting plugin...${NC}"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 fi
 
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-  echo -e "${BLUE}Instaluji plugin zsh-autosuggestions...${NC}"
+  echo -e "${BLUE}Installing zsh-autosuggestions plugin...${NC}"
   git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 fi
 
-# --- 4. Aplikace Configů (Stow) ---
-echo -e "${BLUE}Propojuji dotfiles pomocí Stow...${NC}"
+# --- 4. Applying Configs (Stow) ---
+echo -e "${BLUE}Linking dotfiles using Stow...${NC}"
 
-# Ujistíme se, že složka ~/.config existuje
+# Ensure the ~/.config directory exists
 mkdir -p "$HOME/.config"
 
 cd "$DOTFILES_DIR"
 
-# Seznam složek k propojení
+# List of folders to link
 STOW_DIRS=(
   "fastfetch"
   "lazygit"
@@ -93,7 +93,7 @@ STOW_DIRS=(
   "zshrc"
 )
 
-# Funkce pro zálohování kolizních souborů/složek před spuštěním stow
+# Function to back up conflicting files/folders before running stow
 backup_conflicts() {
   local dir="$1"
   find "$dir" -maxdepth 1 -mindepth 1 2>/dev/null | while read -r item; do
@@ -103,14 +103,14 @@ backup_conflicts() {
         local subrel="${subitem#$dir/}"
         local target="$HOME/$subrel"
         if [ -e "$target" ] && [ ! -L "$target" ]; then
-          echo -e "${BLUE}Zálohuji existující soubor/složku: $target -> $target.bak${NC}"
+          echo -e "${BLUE}Backing up existing file/folder: $target -> $target.bak${NC}"
           mv "$target" "$target.bak"
         fi
       done
     else
       local target="$HOME/$rel"
       if [ -e "$target" ] && [ ! -L "$target" ]; then
-        echo -e "${BLUE}Zálohuji existující soubor/složku: $target -> $target.bak${NC}"
+        echo -e "${BLUE}Backing up existing file/folder: $target -> $target.bak${NC}"
         mv "$target" "$target.bak"
       fi
     fi
@@ -119,21 +119,21 @@ backup_conflicts() {
 
 for dir in "${STOW_DIRS[@]}"; do
   if [ -d "$dir" ]; then
-    echo -e "${GREEN}Zálohuji konflikty a stowuji: $dir${NC}"
+    echo -e "${GREEN}Backing up conflicts and stowing: $dir${NC}"
     backup_conflicts "$dir"
     stow --restow "$dir"
   else
-    echo "Složka '$dir' v dotfiles neexistuje."
+    echo "Folder '$dir' does not exist in dotfiles."
   fi
 done
 
-# --- 5. Přepnutí Shellu ---
+# --- 5. Switching Shell ---
 if [ -f /usr/bin/zsh ]; then
   CURRENT_SHELL=$(basename "$SHELL")
   if [ "$CURRENT_SHELL" != "zsh" ]; then
-    echo -e "${BLUE}Měním výchozí shell na Zsh...${NC}"
+    echo -e "${BLUE}Changing default shell to Zsh...${NC}"
     sudo chsh -s /usr/bin/zsh "$USER"
   fi
 fi
 
-echo -e "${GREEN}HOTOVO! Nastavení dotfiles a Stow dokončeno.${NC}"
+echo -e "${GREEN}DONE! Dotfiles and Stow setup completed.${NC}"

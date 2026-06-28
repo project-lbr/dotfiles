@@ -1,49 +1,49 @@
-# --- PÍSMO (Nutné pro ikony) ---
+# --- FONT (Required for icons) ---
 font_family      JetBrainsMono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 font_size        15.0
 
-# --- VZHLED ---
+# --- APPEARANCE ---
 term xterm-256color
 background_opacity 1
-# Skryje horní lištu okna (ušetří místo na malém displeji X390)
+# Hides the window title bar (saves space on the small X390 display)
 hide_window_decorations yes 
 window_padding_width 15
 
-# --- TILING (Dlaždice) ---
-# Layouty: Tall (hlavní vlevo, zbytek vpravo), Grid (mřížka), Fat (hlavní nahoře)
+# --- TILING ---
+# Layouts: Tall (main left, rest right), Grid, Fat (main top)
 enabled_layouts tall,grid,fat
 
-# --- ZKRATKY (Ovládání bez myši) ---
-# Ctrl+Shift+Enter = Nové okno (automaticky se zařadí)
-# Ctrl+Shift+W     = Zavřít okno
-# Ctrl+Shift+L     = Změnit rozložení (Tall -> Grid -> ...)
+# --- SHORTCUTS (Keyboard control) ---
+# Ctrl+Shift+Enter = New window (placed automatically)
+# Ctrl+Shift+W     = Close window
+# Ctrl+Shift+L     = Change layout (Tall -> Grid -> ...)
 map ctrl+shift+left  neighboring_window left
 map ctrl+shift+right neighboring_window right
 map ctrl+shift+up    neighboring_window up
 map ctrl+shift+down  neighboring_window down
 
-# --- ROZŠÍŘENÍ ---
-# Povolení dálkového ovládání (pro nahrávání obrázků přes icat atd.)
+# --- EXTENSIONS ---
+# Enable remote control (for loading images via icat etc.)
 allow_remote_control yes
 
-# --- ZÁLOŽKY (TABS) ---
-# Ctrl + Tab = Další záložka (jako v prohlížeči)
+# --- TABS ---
+# Ctrl + Tab = Next tab (like in a browser)
 map ctrl+tab        next_tab
 map ctrl+shift+tab  previous_tab
 
-# --- ZMĚNA VELIKOSTI OKEN (RESIZE) ---
-# Alt + Šipka změní velikost aktivního okna
+# --- RESIZING WINDOWS ---
+# Alt + Arrow key resizes the active window
 map alt+left  resize_window narrower
 map alt+right resize_window wider
 map alt+up    resize_window taller
 map alt+down  resize_window shorter
 
-# --- PŘEJMENOVÁNÍ ZÁLOŽKY ---
-# Po stisku této zkratky se podívej DOLŮ nebo NAHORU do okna.
-# Uvidíš tam text "Set tab title:". Napiš název a dej Enter.
+# --- TAB RENAMING ---
+# After pressing this shortcut, look DOWN or UP in the window.
+# You will see the text "Set tab title:". Type the name and press Enter.
 map ctrl+shift+e set_tab_title
 map ctrl+shift+t combine : new_tab : set_tab_title
 

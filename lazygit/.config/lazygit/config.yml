@@ -1,21 +1,21 @@
 gui:
   theme:
     activeBorderColor:
-      - '#f9e2af'    # Žlutá (byla modrá)
+      - '#f9e2af'    # Yellow (was blue)
       - bold
     inactiveBorderColor:
-      - '#a6adc8'    # Šedá (zůstává)
+      - '#a6adc8'    # Gray (remains)
     optionsTextColor:
-      - '#f9e2af'    # Žlutá (byla modrá)
+      - '#f9e2af'    # Yellow (was blue)
     selectedLineBgColor:
       - '#313244'
     cherryPickedCommitBgColor:
       - '#45475a'
     cherryPickedCommitFgColor:
-      - '#f9e2af'    # Žlutá (byla modrá)
+      - '#f9e2af'    # Yellow (was blue)
     unstagedChangesColor:
       - '#f38ba8'
     defaultFgColor:
       - '#cdd6f4'
     searchingActiveBorderColor:
-      - '#f9e2af'    # Žlutá
+      - '#f9e2af'    # Yellow

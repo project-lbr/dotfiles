@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# --- Barvičky ---
+# --- Colors ---
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-# Ochrana před spuštěním pod rootem/sudo
+# Protection against running as root/sudo
 if [ "$EUID" -eq 0 ]; then
-  echo -e "${RED}Chyba: Nespouštěj tento skript pod sudo nebo jako root!${NC}"
-  echo "Skript si o práva root (sudo) požádá sám, až je bude potřebovat."
+  echo -e "${RED}Error: Do not run this script as sudo or root!${NC}"
+  echo "The script will ask for root (sudo) privileges itself when it needs them."
   exit 1
 fi
 
-# Detekce a blokování CachyOS
+# Detection and blocking of CachyOS
 if [ -f /etc/os-release ]; then
   . /etc/os-release
   if [ "$ID" = "cachyos" ] || grep -qi "cachyos" /etc/os-release; then
@@ -22,36 +22,36 @@ if [ -f /etc/os-release ]; then
   fi
 fi
 
-echo -e "${BLUE}Začínám instalaci aplikací...${NC}"
+echo -e "${BLUE}Starting application installation...${NC}"
 
-# --- 3. SEZNAM BALÍČKŮ (Tuxmate) ---
+# --- 3. PACKAGE LIST (Tuxmate) ---
 PKGS=(
-  # Internet a Komunikace
+  # Internet & Communication
   "zen-browser-bin" "discord" "thunderbird" "tailscale"
   "localsend-bin" "filezilla" "bitwarden" "obsidian" "librewolf-bin"
   "stoat-desktop-bin"
 
-  # Média a Kancelář
+  # Media & Office
   "vlc" "spotify" "onlyoffice-bin" "okular" "obs-studio" "droidcam" "freecad"
   "audacity"
 
-  # Editory a Vývoj
+  # Editors & Development
   "visual-studio-code-bin" "neovim" "micro" "git" "lazygit" "antigravity"
 
-  # Terminál a Shell
+  # Terminal & Shell
   "kitty" "zsh" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
   "zoxide" "tldr" "curl" "fd" "ncdu"
 
-  # Systémové nástroje
+  # System Tools
   "timeshift" "flameshot" "stow" "syncthing" "openssh"
 )
 
-echo -e "${BLUE}Aktualizuji systém...${NC}"
+echo -e "${BLUE}Updating system...${NC}"
 sudo pacman -Syu --noconfirm
 
-# Automatická instalace paru, pokud chybí
+# Automatic installation of paru if missing
 if ! command -v paru &>/dev/null; then
-  echo -e "${BLUE}'paru' nebyl nalezen. Instaluji 'paru-bin' z AUR...${NC}"
+  echo -e "${BLUE}'paru' was not found. Installing 'paru-bin' from AUR...${NC}"
   sudo pacman -S --needed --noconfirm base-devel git
   git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin
   cd /tmp/paru-bin
@@ -60,7 +60,7 @@ if ! command -v paru &>/dev/null; then
   rm -rf /tmp/paru-bin
 fi
 
-echo -e "${BLUE}Instaluji balíčky pomocí paru...${NC}"
+echo -e "${BLUE}Installing packages using paru...${NC}"
 paru -S --needed --noconfirm "${PKGS[@]}"
 
-echo -e "${GREEN}Instalace aplikací dokončena!${NC}"
+echo -e "${GREEN}Application installation completed!${NC}"

@@ -2,7 +2,7 @@ fastfetch
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-#MOJE ALIASY
+#MY ALIASES
 alias ll='ls -l'
 alias la='ls -la'
 alias update='paru'
