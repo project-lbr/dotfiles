@@ -17,7 +17,7 @@
 You can set up your environment using two separate scripts:
 
 ### 1. Install Applications
-This script updates your system, installs `yay` if missing, and installs all required packages (browsers, media players, editors, terminal utilities):
+This script updates your system, installs `paru` if missing, and installs all required packages (browsers, media players, editors, terminal utilities):
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/installs/install_apps.sh)"

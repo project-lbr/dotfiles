@@ -49,18 +49,18 @@ PKGS=(
 echo -e "${BLUE}Aktualizuji systém...${NC}"
 sudo pacman -Syu --noconfirm
 
-# Automatická instalace yay, pokud chybí
-if ! command -v yay &>/dev/null; then
-  echo -e "${BLUE}'yay' nebyl nalezen. Instaluji 'yay-bin' z AUR...${NC}"
+# Automatická instalace paru, pokud chybí
+if ! command -v paru &>/dev/null; then
+  echo -e "${BLUE}'paru' nebyl nalezen. Instaluji 'paru-bin' z AUR...${NC}"
   sudo pacman -S --needed --noconfirm base-devel git
-  git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
-  cd /tmp/yay-bin
+  git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin
+  cd /tmp/paru-bin
   makepkg -si --noconfirm
   cd - &>/dev/null
-  rm -rf /tmp/yay-bin
+  rm -rf /tmp/paru-bin
 fi
 
-echo -e "${BLUE}Instaluji balíčky pomocí yay...${NC}"
-yay -S --needed --noconfirm "${PKGS[@]}"
+echo -e "${BLUE}Instaluji balíčky pomocí paru...${NC}"
+paru -S --needed --noconfirm "${PKGS[@]}"
 
 echo -e "${GREEN}Instalace aplikací dokončena!${NC}"
