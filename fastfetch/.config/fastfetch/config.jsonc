@@ -36,15 +36,6 @@
             "key": "│ ├󰍛",
             "keyColor": "green"
         },
-{
-            "type": "localip",
-            "key": "│ ├ TS IP",
-            "keyColor": "green",
-            "showIpv6": false,
-            "showMac": false,
-            "defaultRouteOnly": false,
-            "namePrefix": "tailscale"
-        },
         {
             "type": "disk",
             "key": "└ └",
