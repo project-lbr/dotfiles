@@ -20,7 +20,7 @@
 <br>
 <br>
 
-https://github.com/dhruv8sh/kara
+https://github.com/dhruv8sh/kara <br>
 https://github.com/dhruv8sh/plasma6-window-title-applet
 # Install.sh Installation
 <h2>Warning this works only on Arch-Based Distributions!</h2> 
