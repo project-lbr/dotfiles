@@ -28,7 +28,7 @@ https://github.com/dhruv8sh/plasma6-window-title-applet
 <p>Copy this script in your terminal and it will install "all" of must have apps (for me). </p>
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/installs/install.sh)"
 ```
 
 # Installation

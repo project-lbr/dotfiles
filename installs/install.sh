@@ -39,8 +39,14 @@ fi
 
 # Zjištění, zda už nejsme ve složce dotfiles
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-if [ -d "$SCRIPT_DIR/kitty" ] && [ -d "$SCRIPT_DIR/zshrc" ]; then
-  DOTFILES_DIR="$SCRIPT_DIR"
+if [ "$(basename "$SCRIPT_DIR")" = "installs" ]; then
+  PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+else
+  PARENT_DIR="$SCRIPT_DIR"
+fi
+
+if [ -d "$PARENT_DIR/kitty" ] && [ -d "$PARENT_DIR/zshrc" ]; then
+  DOTFILES_DIR="$PARENT_DIR"
   echo -e "${GREEN}Spouštím přímo z klonované složky: $DOTFILES_DIR${NC}"
 else
   DOTFILES_DIR="$HOME/$REPO_NAME"
