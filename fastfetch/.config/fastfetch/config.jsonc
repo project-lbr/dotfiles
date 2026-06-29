@@ -33,12 +33,12 @@
         },
         {
             "type": "memory",
-            "key": "│ ├󰍛",
+            "key": "│ ├󰘚",
             "keyColor": "green"
         },
         {
             "type": "disk",
-            "key": "└ └",
+            "key": "└ └󰋊",
             "keyColor": "green"
         },
         {
@@ -62,7 +62,7 @@
         },
         {
             "type": "bios",
-            "key": "│ ├",
+            "key": "│ ├",
             "keyColor": "yellow"
         },
         {

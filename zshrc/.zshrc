@@ -14,7 +14,7 @@ alias off='poweroff'
 alias zzz=''
 alias cl='clear'
 alias ff='fastfetch'
-alias dot='cd dotfiles/'
+alias dot='cd ~/dotfiles'
 alias lg='lazygit'
 alias rvk="cd /home/libor/RVK/Pedagogick-portfolium-Bc-Mgr-"
 alias zen='cd ~/zen-browser-css'
@@ -127,4 +127,4 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH:/home/libor/.spicetify
+export PATH=$PATH:$HOME/.spicetify
