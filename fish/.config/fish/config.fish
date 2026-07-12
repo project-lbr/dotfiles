@@ -11,7 +11,6 @@ zoxide init fish | source
 alias ll='ls -l'
 alias la='ls -la'
 alias update='paru'
-alias z='zoxide'
 alias y='yazi'
 alias vi='nvim'
 alias q='exit'
