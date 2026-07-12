@@ -90,6 +90,7 @@ STOW_DIRS=(
   "kitty"
   "btop"
   "starship"
+  "fish"
   "zshrc"
 )
 
@@ -128,7 +129,13 @@ for dir in "${STOW_DIRS[@]}"; do
 done
 
 # --- 5. Switching Shell ---
-if [ -f /usr/bin/zsh ]; then
+if [ -f /usr/bin/fish ]; then
+  CURRENT_SHELL=$(basename "$SHELL")
+  if [ "$CURRENT_SHELL" != "fish" ]; then
+    echo -e "${BLUE}Changing default shell to Fish...${NC}"
+    sudo chsh -s /usr/bin/fish "$USER"
+  fi
+elif [ -f /usr/bin/zsh ]; then
   CURRENT_SHELL=$(basename "$SHELL")
   if [ "$CURRENT_SHELL" != "zsh" ]; then
     echo -e "${BLUE}Changing default shell to Zsh...${NC}"

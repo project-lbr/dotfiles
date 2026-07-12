@@ -39,7 +39,7 @@ If you prefer to configure things manually or want to pick only specific configs
 ### 1. Install Core Dependencies
 Make sure you have the core packages installed:
 ```bash
-sudo pacman -S kitty starship zsh stow git ttf-jetbrains-mono-nerd
+sudo pacman -S kitty starship zsh fish stow git ttf-jetbrains-mono-nerd
 ```
 
 ### 2. Clone the Repository
@@ -52,7 +52,7 @@ cd ~/dotfiles
 ### 3. Deploy Configs with Stow
 Use GNU Stow to symlink the configurations:
 ```bash
-stow btop fastfetch kitty lazygit starship yazi zshrc
+stow btop fastfetch kitty lazygit starship yazi fish zshrc
 ```
 
 ---
@@ -64,6 +64,7 @@ This repository contains configurations for:
 * **[Kitty](https://sw.kovidgoyal.net/kitty/)** - Fast, GPU-accelerated terminal emulator.
 * **[Starship](https://starship.rs/)** - Blazing-fast, minimal, and customizable prompt.
 * **[Zsh](https://www.zsh.org/)** (with **[Oh My Zsh](https://ohmyz.sh/)**) - Configured with autocomplete and syntax highlighting.
+* **[Fish](https://fishshell.com/)** - Smart and user-friendly command line shell.
 * **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)** - Elegant, fast system information display.
 * **[Yazi](https://yazi-rs.github.io/)** - Blazing fast terminal file manager written in Rust.
 * **[Btop](https://github.com/aristocratos/btop)** - Interactive system resources monitor.
