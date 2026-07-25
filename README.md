@@ -11,19 +11,23 @@
 
 ## 🚀 Quick Start (Automated Installation)
 
-> [!WARNING]
-> **Compatibility Warning:** These scripts are designed for Arch Linux and EndeavourOS. They are **not compatible** with CachyOS.
+You can set up your environment using two separate scripts depending on your distribution:
 
-You can set up your environment using two separate scripts:
-
-### 1. Install Applications
+### 1a. Install Applications (Arch Linux / EndeavourOS)
 This script updates your system, installs `paru` if missing, and installs all required packages (browsers, media players, editors, terminal utilities):
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/installs/install_apps.sh)"
 ```
 
-### 2. Setup Dotfiles & GNU Stow
+### 1b. Install Applications (CachyOS)
+This script is optimized for **CachyOS**. It pulls performance-optimized packages (like `zen-browser` and `librewolf`) directly from CachyOS repositories, installs `btrfs-assistant` instead of `timeshift` (which conflicts with CachyOS snapper support), and installs `paru`:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/installs/install_apps_cachyos.sh)"
+```
+
+### 2. Setup Dotfiles & GNU Stow (All Distributions)
 This script clones/updates the repository, sets up Zsh (with Oh My Zsh, auto-suggestions, syntax highlighting), backs up your existing configurations (renames them to `.bak`), links the configurations using GNU Stow, and sets your default shell to Zsh:
 
 ```bash
