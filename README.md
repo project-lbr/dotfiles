@@ -28,7 +28,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/mai
 ```
 
 ### 2. Setup Dotfiles & GNU Stow (All Distributions)
-This script clones/updates the repository, sets up Zsh (with Oh My Zsh, auto-suggestions, syntax highlighting), backs up your existing configurations (renames them to `.bak`), links the configurations using GNU Stow, and sets your default shell to Zsh:
+This script clones/updates the repository, sets up Fish, backs up your existing configurations (renames them to `.bak`), links the configurations using GNU Stow, and sets your default shell to Fish:
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/project-lbr/dotfiles/main/installs/setup_dotfiles.sh)"
@@ -43,7 +43,7 @@ If you prefer to configure things manually or want to pick only specific configs
 ### 1. Install Core Dependencies
 Make sure you have the core packages installed:
 ```bash
-sudo pacman -S kitty starship zsh fish stow git ttf-jetbrains-mono-nerd
+sudo pacman -S kitty starship fish stow git ttf-jetbrains-mono-nerd
 ```
 
 ### 2. Clone the Repository
@@ -56,7 +56,7 @@ cd ~/dotfiles
 ### 3. Deploy Configs with Stow
 Use GNU Stow to symlink the configurations:
 ```bash
-stow btop fastfetch kitty lazygit starship yazi fish zshrc
+stow btop fastfetch kitty lazygit starship yazi fish
 ```
 
 ---
@@ -67,7 +67,6 @@ This repository contains configurations for:
 
 * **[Kitty](https://sw.kovidgoyal.net/kitty/)** - Fast, GPU-accelerated terminal emulator.
 * **[Starship](https://starship.rs/)** - Blazing-fast, minimal, and customizable prompt.
-* **[Zsh](https://www.zsh.org/)** (with **[Oh My Zsh](https://ohmyz.sh/)**) - Configured with autocomplete and syntax highlighting.
 * **[Fish](https://fishshell.com/)** - Smart and user-friendly command line shell.
 * **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)** - Elegant, fast system information display.
 * **[Yazi](https://yazi-rs.github.io/)** - Blazing fast terminal file manager written in Rust.
