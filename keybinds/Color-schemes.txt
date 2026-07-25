@@ -1,0 +1,6 @@
+Barvy - Catppuccin.Mocha
+Styl aplikací - Breeze
+Styl plasmy - Breeze
+Dekorace oken - Utterly-Round-Dark
+Ikony - Kora
+Ukazatele - Catppuccin Mocha Light
