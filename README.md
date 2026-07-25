@@ -77,5 +77,6 @@ This repository contains configurations for:
 
 ## 🔗 Useful Links & Addons
 External add-ons used in this setup:
+* [AppGrid](https://appgrid.xarbit.dev/) - Keyboard-driven application launcher used as the main pop-up panel.
 * [Kara](https://github.com/dhruv8sh/kara) - KDE Window Decoration theme.
 * [Plasma 6 Window Title Applet](https://github.com/dhruv8sh/plasma6-window-title-applet) - Plasma 6 widget for displaying the active window title in the panel.
