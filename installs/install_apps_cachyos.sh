@@ -46,7 +46,7 @@ PKGS=(
 
   # Terminál a Shell
   "kitty" "zsh" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
-  "zoxide" "tldr" "curl" "fd" "ncdu"
+  "zoxide" "tealdeer" "curl" "fd" "ncdu"
 
   # Systémové nástroje (místo Timeshiftu používá CachyOS nativní Btrfs Assistant)
   "btrfs-assistant" "flameshot" "stow" "syncthing" "openssh"
