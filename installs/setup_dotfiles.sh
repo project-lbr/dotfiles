@@ -36,7 +36,7 @@ else
   PARENT_DIR="$SCRIPT_DIR"
 fi
 
-if [ -d "$PARENT_DIR/kitty" ] && [ -d "$PARENT_DIR/zshrc" ]; then
+if [ -d "$PARENT_DIR/kitty" ] && [ -d "$PARENT_DIR/fish" ]; then
   DOTFILES_DIR="$PARENT_DIR"
   echo -e "${GREEN}Running directly from the cloned folder: $DOTFILES_DIR${NC}"
 else
@@ -57,21 +57,10 @@ if ! command -v stow &>/dev/null; then
   sudo pacman -S --noconfirm stow
 fi
 
-# --- 3. Oh My Zsh and plugins ---
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo -e "${BLUE}Installing Oh My Zsh...${NC}"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-fi
-
-ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-  echo -e "${BLUE}Installing zsh-syntax-highlighting plugin...${NC}"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-fi
-
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-  echo -e "${BLUE}Installing zsh-autosuggestions plugin...${NC}"
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+# --- 3. Ensuring Fish is installed ---
+if ! command -v fish &>/dev/null; then
+  echo -e "${BLUE}Fish shell not found. Installing...${NC}"
+  sudo pacman -S --noconfirm fish
 fi
 
 # --- 4. Applying Configs (Stow) ---
@@ -91,7 +80,6 @@ STOW_DIRS=(
   "btop"
   "starship"
   "fish"
-  "zshrc"
 )
 
 # Function to back up conflicting files/folders before running stow
@@ -135,12 +123,8 @@ if [ -f /usr/bin/fish ]; then
     echo -e "${BLUE}Changing default shell to Fish...${NC}"
     sudo chsh -s /usr/bin/fish "$USER"
   fi
-elif [ -f /usr/bin/zsh ]; then
-  CURRENT_SHELL=$(basename "$SHELL")
-  if [ "$CURRENT_SHELL" != "zsh" ]; then
-    echo -e "${BLUE}Changing default shell to Zsh...${NC}"
-    sudo chsh -s /usr/bin/zsh "$USER"
-  fi
+else
+  echo -e "${RED}Warning: Fish shell is not installed, cannot switch default shell.${NC}"
 fi
 
 echo -e "${GREEN}DONE! Dotfiles and Stow setup completed.${NC}"

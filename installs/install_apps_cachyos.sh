@@ -45,7 +45,7 @@ PKGS=(
   "visual-studio-code-bin" "neovim" "micro" "git" "lazygit" "antigravity"
 
   # Terminál a Shell
-  "kitty" "zsh" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
+  "kitty" "fish" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
   "zoxide" "tealdeer" "curl" "fd" "ncdu"
 
   # Systémové nástroje (místo Timeshiftu používá CachyOS nativní Btrfs Assistant)

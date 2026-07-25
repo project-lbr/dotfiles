@@ -39,7 +39,7 @@ PKGS=(
   "visual-studio-code-bin" "neovim" "micro" "git" "lazygit" "antigravity"
 
   # Terminal & Shell
-  "kitty" "zsh" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
+  "kitty" "fish" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
   "zoxide" "tealdeer" "curl" "fd" "ncdu"
 
   # System Tools
