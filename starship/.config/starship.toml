@@ -10,9 +10,9 @@ $character"""
 [username]
 style_user = "green bold"
 style_root = "red bold"
-# For dynamic name use [user] instead of static name
+# For dynamic name use [$user] instead of static name
 # $user for dynamic name
-format = "[project-lbr]($style)"
+format = "[$user]($style)"
 show_always = true
 
 # HOSTNAME
