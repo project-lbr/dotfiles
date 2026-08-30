@@ -25,6 +25,9 @@ alias zen='cd ~/zen-browser-css'
 # Proměnné prostředí
 set -gx EDITOR nvim
 
+# Pager nastavení pro CAT <- Paru PKGBUILD 
+set -Ux PAGER cat
+
 # Přidání cest do PATH
 fish_add_path $HOME/.spicetify
 
