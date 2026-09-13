@@ -25,7 +25,7 @@ alias zen='cd ~/zen-browser-css'
 # Proměnné prostředí
 set -gx EDITOR nvim
 
-# Pager nastavení pro CAT <- Paru PKGBUILD 
+# Pager nastavení pro cat <- Paru PKGBUILD 
 set -Ux PAGER cat
 
 # Přidání cest do PATH
