@@ -19,7 +19,7 @@ alias cl='clear'
 alias ff='fastfetch'
 alias dot='cd ~/dotfiles'
 alias lg='lazygit'
-alias rvk="cd /home/libor/RVK/Pedagogick-portfolium-Bc-Mgr-"
+alias rvk="cd ~/RVK/Pedagogick-portfolium-Bc-Mgr-"
 alias zen='cd ~/zen-browser-css'
 
 # Proměnné prostředí
@@ -33,7 +33,7 @@ fish_add_path $HOME/.spicetify
 
 # Náhrada za sudo plugin (stisknutím Alt+S přidá sudo na začátek řádku)
 function fish_user_key_bindings
-    bind \es 'sudo_command_toggle'
+    bind \es sudo_command_toggle
 end
 
 function sudo_command_toggle
