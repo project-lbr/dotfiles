@@ -48,3 +48,13 @@ function sudo_command_toggle
         commandline -r "sudo $cmd"
     end
 end
+
+#Yazi nechání složky tam kde jsem skončil
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
