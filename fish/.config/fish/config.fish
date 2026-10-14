@@ -8,8 +8,9 @@ starship init fish | source
 zoxide init fish | source
 
 # --- MOJE ALIASY ---
-alias ll='ls -l'
-alias la='ls -la'
+alias ls="eza --icons"
+alias ll="eza -la --icons --git"
+alias tree="eza --tree --icons"
 alias update='paru'
 alias y='yazi'
 alias vi='nvim'
