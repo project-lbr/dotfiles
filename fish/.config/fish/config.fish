@@ -59,3 +59,10 @@ function y
     end
     rm -f -- "$tmp"
 end
+
+function s
+    set -l session (sesh list -t -c | fzf --height 40% --reverse --border-label ' Projdi projekty / sezení ' --border)
+    if test -n "$session"
+        sesh connect $session
+    end
+end
