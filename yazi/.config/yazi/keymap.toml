@@ -3,7 +3,7 @@ prepend_keymap = [
     { on = "z", run = "plugin zoxide", desc = "Jump to directory via zoxide" },
     { on = "Z", run = "plugin fzf",    desc = "Jump to directory via fzf" },
     { on = "<C-y>", run = "plugin wl-clipboard", desc = "Copy selected files to system clipboard" },
-  # Přepínání tabů na české klávesnici (+, ě, š, č, ř, ž, ý, á, í)
+  # Tab switching on a Czech keyboard layout (+, ě, š, č, ř, ž, ý, á, í)
     { on = "+", run = "tab_switch 0", desc = "Switch to first tab" },
     { on = "ě", run = "tab_switch 1", desc = "Switch to second tab" },
     { on = "š", run = "tab_switch 2", desc = "Switch to third tab" },

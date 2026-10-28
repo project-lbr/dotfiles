@@ -1,13 +1,13 @@
-# Spuštění fastfetch při startu
+# Run fastfetch on startup
 if status is-interactive
     fastfetch
 end
 
-# Inicializace Starship a Zoxide
+# Initialize Starship and Zoxide
 starship init fish | source
 zoxide init fish | source
 
-# --- MOJE ALIASY ---
+# --- MY ALIASES ---
 alias ls="eza --icons=always"
 alias ll="eza -la --icons --git"
 alias tree="eza --tree --icons"
@@ -23,16 +23,16 @@ alias lg='lazygit'
 alias rvk="cd ~/RVK/Pedagogick-portfolium-Bc-Mgr-"
 alias zen='cd ~/zen-browser-css'
 
-# Proměnné prostředí
+# Environment variables
 set -gx EDITOR nvim
 
-# Pager nastavení pro cat <- Paru PKGBUILD 
+# Use cat as pager <- Paru PKGBUILD 
 set -Ux PAGER cat
 
-# Přidání cest do PATH
+# Add paths to PATH
 fish_add_path $HOME/.spicetify
 
-# Náhrada za sudo plugin (stisknutím Alt+S přidá sudo na začátek řádku)
+# Replacement for the sudo plugin (Alt+S adds sudo to the start of the line)
 function fish_user_key_bindings
     bind \es sudo_command_toggle
 end
@@ -40,7 +40,7 @@ end
 function sudo_command_toggle
     set -l cmd (commandline -b)
     if test -z "$cmd"
-        # Pokud je řádek prázdný, načteme poslední příkaz z historie
+        # If the line is empty, load the last command from history
         set cmd $history[1]
     end
     if string match -r '^sudo ' $cmd
@@ -50,7 +50,7 @@ function sudo_command_toggle
     end
 end
 
-#Yazi nechání složky tam kde jsem skončil
+# Yazi: stay in the directory where I left off
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
