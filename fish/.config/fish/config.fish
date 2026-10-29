@@ -12,7 +12,6 @@ alias ls="eza --icons=always"
 alias ll="eza -la --icons --git"
 alias tree="eza --tree --icons"
 alias update='paru'
-alias y='yazi'
 alias vi='nvim'
 alias q='exit'
 alias off='poweroff'

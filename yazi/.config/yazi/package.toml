@@ -3,11 +3,6 @@ use = "grappas/wl-clipboard"
 rev = "8cc5524"
 hash = "5c587834c274dca9059092714ece1f18"
 
-[[plugin.deps]]
-use = "XYenon/clipboard"
-rev = "4b4b6c5"
-hash = "cdcc9c84c9757d585af78c87b012f38b"
-
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "9e053d0"

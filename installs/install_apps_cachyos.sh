@@ -46,7 +46,7 @@ PKGS=(
 
   # Terminal & Shell
   "kitty" "fish" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
-  "zoxide" "tealdeer" "curl" "fd" "ncdu"
+  "zoxide" "tealdeer" "curl" "fd" "ncdu" "eza" "sesh-bin" "tmux"
 
   # System Tools (CachyOS uses the native Btrfs Assistant instead of Timeshift)
   "btrfs-assistant" "flameshot" "stow" "syncthing" "openssh"

@@ -40,7 +40,7 @@ PKGS=(
 
   # Terminal & Shell
   "kitty" "fish" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
-  "zoxide" "tealdeer" "curl" "fd" "ncdu"
+  "zoxide" "tealdeer" "curl" "fd" "ncdu" "eza" "sesh-bin" "tmux"
 
   # System Tools
   "timeshift" "flameshot" "stow" "syncthing" "openssh"
