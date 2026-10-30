@@ -2,6 +2,8 @@
 prepend_keymap = [
     { on = "z", run = "plugin zoxide", desc = "Jump to directory via zoxide" },
     { on = "Z", run = "plugin fzf",    desc = "Jump to directory via fzf" },
+    { on = [ "g", "o" ], run = "shell 'xdg-open .' --orphan", desc = "Open current directory in GUI file manager" },
+    { on = [ "g", "l" ], run = "shell 'lazygit' --block", desc = "Open lazygit in current directory" },
     { on = "<C-y>", run = "plugin wl-clipboard", desc = "Copy selected files to system clipboard" },
   # Tab switching on a Czech keyboard layout (+, ě, š, č, ř, ž, ý, á, í)
     { on = "+", run = "tab_switch 0", desc = "Switch to first tab" },
