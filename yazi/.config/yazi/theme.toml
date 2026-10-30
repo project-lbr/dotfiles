@@ -220,3 +220,11 @@ conds = [
 	{ if = "exec", text = "", fg = "#a6e3a1" },
 	{ if = "!dir", text = "", fg = "#cdd6f4" },
 ]
+
+# : git.yazi {{{
+
+[git]
+clean_sign = "✓"
+clean      = { fg = "#a6e3a1" }
+
+# : }}}
