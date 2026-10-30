@@ -1,0 +1,15 @@
+# Shared git settings (read alongside ~/.gitconfig, which keeps personal data)
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = Catppuccin Mocha
+
+[merge]
+	conflictStyle = zdiff3

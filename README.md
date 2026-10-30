@@ -19,9 +19,10 @@ Each top-level folder is a Stow package that mirrors `$HOME`, e.g. `kitty/.confi
 | `kitty` | [Kitty](https://sw.kovidgoyal.net/kitty/) | JetBrainsMono Nerd Font, 80% opacity with blur, tall/grid/fat layouts |
 | `starship` | [Starship](https://starship.rs/) | Prompt (`~/.config/starship.toml`) |
 | `fastfetch` | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info shown when a shell starts |
-| `yazi` | [Yazi](https://yazi-rs.github.io/) | File manager with Catppuccin flavor and `wl-clipboard` plugin |
+| `yazi` | [Yazi](https://yazi-rs.github.io/) | File manager with Catppuccin flavor, `wl-clipboard` and `git` plugins |
 | `btop` | [Btop](https://github.com/aristocratos/btop) | Resource monitor with Catppuccin theme |
-| `lazygit` | [Lazygit](https://github.com/jesseduffield/lazygit) | Terminal UI for git |
+| `lazygit` | [Lazygit](https://github.com/jesseduffield/lazygit) | Terminal UI for git, diffs rendered by delta |
+| `git` | [Git](https://git-scm.com/) + [delta](https://github.com/dandavison/delta) | Shared settings in `~/.config/git/config` (delta pager); personal data stays in `~/.gitconfig` |
 | `zshrc` | Zsh | Legacy oh-my-zsh config, not linked by the setup script |
 
 Other folders:

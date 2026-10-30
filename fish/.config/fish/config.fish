@@ -28,6 +28,9 @@ set -gx EDITOR nvim
 # Use cat as pager <- Paru PKGBUILD 
 set -Ux PAGER cat
 
+# Delta (git diff) still needs a real pager for long diffs
+set -gx DELTA_PAGER "less -R"
+
 # Add paths to PATH
 fish_add_path $HOME/.spicetify
 

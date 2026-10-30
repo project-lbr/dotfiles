@@ -42,11 +42,11 @@ PKGS=(
   "audacity"
 
   # Editors & Development
-  "visual-studio-code-bin" "neovim" "micro" "git" "lazygit" "antigravity"
+  "visual-studio-code-bin" "neovim" "micro" "git" "git-delta" "lazygit" "antigravity"
 
   # Terminal & Shell
   "kitty" "fish" "starship" "fastfetch" "btop" "yazi" "bat" "fzf"
-  "zoxide" "tealdeer" "curl" "fd" "ncdu" "eza" "sesh-bin" "tmux"
+  "zoxide" "tealdeer" "curl" "fd" "ncdu" "eza" "sesh-bin" "tmux" "fisher"
 
   # System Tools (CachyOS uses the native Btrfs Assistant instead of Timeshift)
   "btrfs-assistant" "flameshot" "stow" "syncthing" "openssh"

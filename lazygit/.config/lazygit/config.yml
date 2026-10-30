@@ -1,21 +1,25 @@
 gui:
   theme:
     activeBorderColor:
-      - '#f9e2af'    # Yellow (was blue)
+      - '#f9e2af' # Yellow (was blue)
       - bold
     inactiveBorderColor:
-      - '#a6adc8'    # Gray (remains)
+      - '#a6adc8' # Gray (remains)
     optionsTextColor:
-      - '#f9e2af'    # Yellow (was blue)
+      - '#f9e2af' # Yellow (was blue)
     selectedLineBgColor:
       - '#313244'
     cherryPickedCommitBgColor:
       - '#45475a'
     cherryPickedCommitFgColor:
-      - '#f9e2af'    # Yellow (was blue)
+      - '#f9e2af' # Yellow (was blue)
     unstagedChangesColor:
       - '#f38ba8'
     defaultFgColor:
       - '#cdd6f4'
     searchingActiveBorderColor:
-      - '#f9e2af'    # Yellow
+      - '#f9e2af' # Yellow
+git:
+  # Use delta to render diffs (colors come from ~/.config/git/config)
+  diffRenderers:
+    - command: delta --paging=never
