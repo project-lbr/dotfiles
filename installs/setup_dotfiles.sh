@@ -117,15 +117,7 @@ for dir in "${STOW_DIRS[@]}"; do
   fi
 done
 
-# --- 5. Fish plugins (listed in fish/.config/fish/fish_plugins) ---
-if command -v fish &>/dev/null && fish -c 'type -q fisher'; then
-  echo -e "${BLUE}Installing Fish plugins via Fisher...${NC}"
-  fish -c 'fisher update'
-else
-  echo -e "${RED}Warning: Fisher is not installed, skipping Fish plugins.${NC}"
-fi
-
-# --- 6. Switching Shell ---
+# --- 5. Switching Shell ---
 if [ -f /usr/bin/fish ]; then
   CURRENT_SHELL=$(basename "$SHELL")
   if [ "$CURRENT_SHELL" != "fish" ]; then
