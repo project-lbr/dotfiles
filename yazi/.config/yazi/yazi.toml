@@ -1,6 +1,17 @@
 [mgr]
 show_hidden = true
 
+# Markdown opens in Obsidian (Enter); `o` opens anything in nvim (keymap.toml)
+[opener]
+obsidian = [
+	{ run = "obsidian %s1", desc = "Obsidian", orphan = true, for = "linux" },
+]
+
+[open]
+prepend_rules = [
+	{ url = "*.md", use = [ "obsidian", "edit", "reveal" ] },
+]
+
 # git.yazi: fetch git status for files and directories
 [[plugin.prepend_fetchers]]
 url   = "*"
